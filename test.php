@@ -5,4 +5,7 @@ $merp = 'what is going on with this';
 
 if ($derp = $merp) {
   echo 'hey you look like a snerp!';
+} else {
+  echo "do something else";
 }
+
