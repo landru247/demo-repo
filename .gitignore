@@ -1,0 +1,5 @@
+# PhpStorm Project Files #
+#########################
+.idea/*
+.idea/inspectionProfiles/*
+.idea/codeStyles/*
