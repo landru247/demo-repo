@@ -3,3 +3,14 @@
 .idea/*
 .idea/inspectionProfiles/*
 .idea/codeStyles/*
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Thumbs.db
+._*
+
+# Vim generated files #
+######################
+*.un~
