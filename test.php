@@ -6,8 +6,8 @@ $merp = 'what is going on with this';
 // Unnecessary comment!
 
 if ($derp !== $merp) {
-  echo 'hey you look like a snerp!';
+  echo $derp;
 } else {
-  echo 'do something else';
+  echo $merp;
 }
 
