@@ -12,7 +12,7 @@ jobs:
       - name: Checkout source Git branch
         uses: actions/checkout@v2
         with:
-            ref: master
+            ref: compile-workflow
             fetch-depth: 10
             submodules: true
 
