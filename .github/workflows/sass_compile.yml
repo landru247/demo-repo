@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - src-pages
+      - master
 
 
 jobs:
@@ -12,18 +12,18 @@ jobs:
       - name: Checkout source Git branch
         uses: actions/checkout@v2
         with:
-            ref: src-pages
+            ref: master
             fetch-depth: 10
             submodules: true
 
       - name: Make destination directory for compiled CSS
-        run: mkdir -vp /tmp/demo-repo/assets/css
+        run: mkdir -vp /demo-repo/assets/css
 
       - name: Compile CSS from SCSS files
         uses: gha-utilities/sass-build@v0.4.7
         with:
           source: _sass/main.scss
-          destination: /tmp/demo-repo/assets/css/main.css
+          destination: /demo-repo/assets/css/main.css
 
       - name: Checkout destination Git branch
         uses: actions/checkout@v2
@@ -32,7 +32,7 @@ jobs:
             fetch-depth: 1
 
       - name: Move compiled CSS to path within pr-pages branch
-        run: mv /tmp/demo-repo/assets/css assets/
+        run: mv /demo-repo/assets/css assets/
 
       - name: Add and Commit changes to pr-pages branch
         run: |
