@@ -1,7 +1,7 @@
 name: sass-compile
 on: [push]
 jobs:
-  check-bats-version:
+  sass-compile:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
