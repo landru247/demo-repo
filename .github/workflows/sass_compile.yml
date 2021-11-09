@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout source Git branch
         # uses: actions/checkout@v2
-        uses: landru247/demo-repo@master
+        uses: landru247/demo-repo@compile-workflow
         with:
             ref: src-pages
             fetch-depth: 10
