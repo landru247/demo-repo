@@ -6,6 +6,10 @@ on:
     branches:
       - src-pages
 
+  pull_request:
+    branches:
+      - src-pages
+
 jobs:
   build_css:
     runs-on: ubuntu-latest
