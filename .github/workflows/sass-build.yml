@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - ${{ github.head_ref }}
+      - master
 
 jobs:
   build_css:
@@ -11,7 +11,7 @@ jobs:
       - name: Checkout source Git branch
         uses: actions/checkout@v2
         with:
-            ref: ${{ github.head_ref }}
+            ref: master
             fetch-depth: 10
             submodules: true
 
