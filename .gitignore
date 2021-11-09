@@ -1,3 +1,9 @@
+# CSS Output Directory #
+# compile/minify is done on GH #
+########################
+css/
+css/*
+
 # PhpStorm Project Files #
 #########################
 .idea/*
