@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - master
+      - compile-workflow
 
 
 jobs:
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout source Git branch
         uses: actions/checkout@v2
         with:
-            ref: master
+            ref: compile-workflow
             fetch-depth: 10
             submodules: true
 
@@ -42,7 +42,7 @@ jobs:
           git commit -m 'Updates compiled CSS files'
 
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@compile-workflow
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: pr-pages
