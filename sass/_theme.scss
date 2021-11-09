@@ -1,0 +1,13 @@
+@import "var";
+
+.derp {
+  color: $primary;
+
+  .merp {
+    background-color: $secondary;
+
+    .slerp {
+      cursor: pointer;
+    }
+  }
+}
