@@ -1,8 +1,6 @@
 on:
-
   pull_request:
-    branches:
-    - branch-1
+    branches: [master, main]
 
 jobs:
   build_css:
@@ -12,7 +10,7 @@ jobs:
       - name: Checkout source Git branch
         uses: actions/checkout@v2
         with:
-          ref: branch-1
+          ref: master
           fetch-depth: 10
           submodules: true
 
