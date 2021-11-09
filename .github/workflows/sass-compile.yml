@@ -1,7 +1,6 @@
 on:
   push:
-    branches:
-      branches-ignore: [master, main]
+      branches: master
 
 jobs:
   build_css:
