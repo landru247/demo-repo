@@ -1,9 +1,7 @@
 on:
-#  push:
-#    branches:
-#      - src-pages
-  pull_request:
-    branches: ${{ github.head_ref }}
+  push:
+    branches:
+      - ${{ github.head_ref }}
 
 jobs:
   build_css:
