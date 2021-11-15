@@ -1,8 +1,6 @@
 on:
-  push:
-    branches:
-      - src-pages
-
+pull_request:
+    branches: [ $default-branch ]
 
 jobs:
   build_css:
