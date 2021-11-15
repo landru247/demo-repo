@@ -1,7 +1,6 @@
 on:
-  push:
+  pull_request:
     branches: [master, main]
-
 
 jobs:
   build_css:
@@ -11,9 +10,9 @@ jobs:
       - name: Checkout source Git branch
         uses: actions/checkout@v2
         with:
-            ref: src-pages
-            fetch-depth: 10
-            submodules: true
+          ref: ${{ github.ref }}
+          fetch-depth: 10
+          submodules: true
 
       - name: Make destination directory for compiled CSS
         run: mkdir -vp /tmp/demo-repo/assets/css
@@ -21,17 +20,17 @@ jobs:
       - name: Compile CSS from SCSS files
         uses: gha-utilities/sass-build@v0.4.7
         with:
-          source: _scss/main.scss
+          source: scss/main.scss
           destination: /tmp/demo-repo/assets/css/main.css
 
       - name: Checkout destination Git branch
         uses: actions/checkout@v2
         with:
-            ref: pr-pages
-            fetch-depth: 1
+          ref: pr-pages
+          fetch-depth: 1
 
       - name: Move compiled CSS to path within pr-pages branch
-        run: mv /tmp/demo-repoe/assets/css assets/
+        run: mv /tmp/demo-repo/assets/css assets/
 
       - name: Add and Commit changes to pr-pages branch
         run: |
@@ -51,7 +50,7 @@ jobs:
         with:
           pull_request_token: ${{ secrets.GITHUB_TOKEN }}
           head: pr-pages
-          base: gh-pages
+          base: master
           title: 'Updates site files from latest Actions build'
           body: >
             Perhaps a multi-line description
