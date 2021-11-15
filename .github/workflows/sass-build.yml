@@ -1,7 +1,6 @@
 on:
   push:
-    branches:
-      - src-pages
+    branches: [master, main]
 
 
 jobs:
