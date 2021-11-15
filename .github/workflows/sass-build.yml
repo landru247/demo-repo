@@ -1,6 +1,6 @@
 on:
   pull_request:
-    branches: [master, main]
+    branches: ${{ github.ref }}
 
 jobs:
   build_css:
